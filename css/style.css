@@ -1,4 +1,4 @@
-@import url('https://fonts.googlepis.com/css2?family=poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googlepis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -7,16 +7,15 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: 'poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
 
 }
 
-:root{
+:root {
     --bg-color: #081b29;
     --second-bg-color: #112e42;
     --text-color: #ededed;
     --main-color: #00abf0;
-
 } 
 
 html {
@@ -25,7 +24,7 @@ html {
 }
 
 body {
-    background: var(--big-color);
+    background: var(--bg-color);
     color: var(--text-color);
     
 }
@@ -36,17 +35,16 @@ body {
     width: 100%;
     padding: 2rem 9%;
     background: var(--bg-color);
+    display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-
 }
 
 .logo {
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
-
 }
 
 .navbar a{
@@ -54,15 +52,16 @@ body {
     color: var(--text-color);
     font-weight: 500;
     margin-left: 3.5rem;
-
+    transition: .3s;
 }
 
 .navbar a:hover,
 .navbar a.active {
     color: var(--main-color);
 }
+
 #menu-icon {
-    font-size: 3.6%;
+    font-size: 3.6rem;
     color: var(--text-color);
     cursor: pointer;
     display: none;
@@ -128,16 +127,16 @@ section{
     border-radius: .8rem;
     font-size: 1.8rem;
     font-weight: 600;
+    letter-spacing: .1rem;
     color: var(--bg-color);  
     z-index: 1;
     overflow: hidden;  
     transition: .5s;  
 }
 
-.btn-box .btn:hover{
+.btn-box .btn:hover {
     color: var(--main-color);
 }
-
 
 .btn-box .btn:nth-child(2){
     background: transparent;
@@ -157,12 +156,17 @@ section{
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 0;
     height: 100%;
     background: var(--bg-color);
     z-index: -1;
-    transition: .5rem;
+    transition: .5s;
 }
+
+.btn-box .btn:hover::before {
+    width: 100%;
+}
+
 .home-sci {
     position: absolute;
     bottom: 4rem;
@@ -186,7 +190,7 @@ section{
     color: var(--main-color);
     z-index: 1;
     overflow: hidden;
-    transition: .5rem;
+    transition: .5s;
 
 }
 
@@ -201,9 +205,9 @@ section{
     left: 0;
     width: 0;
     height: 100%;
-    background: var(--main-color);
+    background: red;
     z-index: -1;
-    transition: .5rem;
+    transition: .5s;
 
 }
 
@@ -379,7 +383,7 @@ span {
     height: 100%;
     background: var(--second-bg-color);
     z-index: -1;
-    transition: .5rem;
+    transition: .5s;
 }
 
 .education-content .content:hover::before{
