@@ -29,3 +29,42 @@ body {
     color: var(--text-color);
     
 }
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: transparent;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+
+}
+
+.navbar a{
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+#menu-icon {
+    font-size: 3.6%;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+
+}
