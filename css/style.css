@@ -67,9 +67,18 @@ body {
 
 .container {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: var(--container-padding);
-    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+    height: auto;
 }
 
 /* ===========================
@@ -552,15 +561,18 @@ body {
     padding: var(--section-padding);
     position: relative;
     z-index: 1;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .bento-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
-    max-width: 1400px;
+    max-width: 100%;
     width: 100%;
     margin: 0 auto;
+    min-width: 0;
 }
 
 .bento-item {
@@ -1054,6 +1066,12 @@ body {
 }
 
 @media (max-width: 768px) {
+    .about .container,
+    .contact .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
     .profile-header {
         flex-direction: column;
         align-items: center;
@@ -1075,6 +1093,10 @@ body {
 
     .interests-list {
         grid-template-columns: 1fr;
+    }
+
+    .bento-item {
+        padding: 1.25rem;
     }
 }
 
@@ -2237,6 +2259,8 @@ body {
 .contact {
     padding: var(--section-padding);
     background: var(--dark-secondary);
+    overflow-x: hidden;
+    width: 100%;
 }
 
 .contact-wrapper {
