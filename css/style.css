@@ -559,6 +559,7 @@ body {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     max-width: 1400px;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -568,6 +569,9 @@ body {
     transition: var(--transition-base);
     position: relative;
     overflow: hidden;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .bento-item::before {
@@ -683,6 +687,7 @@ body {
 
 .profile-info {
     flex: 1;
+    min-width: 0;
 }
 
 .profile-info h3 {
@@ -704,10 +709,17 @@ body {
     gap: 0.5rem;
     color: var(--text-muted);
     font-size: 0.9rem;
+    flex-wrap: wrap;
+    overflow-wrap: break-word;
+}
+
+.location span {
+    word-break: break-word;
 }
 
 .location i {
     color: var(--accent-color);
+    flex-shrink: 0;
 }
 
 .profile-description {
@@ -946,6 +958,10 @@ body {
     margin-bottom: 1rem;
 }
 
+.timeline-content {
+    min-width: 0;
+}
+
 .timeline-achievements {
     list-style: none;
     padding: 0;
@@ -960,6 +976,11 @@ body {
     align-items: flex-start;
     color: var(--text-secondary);
     line-height: 1.6;
+}
+
+.timeline-achievements li span {
+    min-width: 0;
+    overflow-wrap: break-word;
 }
 
 .timeline-achievements i {
@@ -2223,6 +2244,8 @@ body {
     grid-template-columns: 1fr 1.2fr;
     gap: 3rem;
     margin-bottom: 5rem;
+    width: 100%;
+    min-width: 0;
 }
 
 /* Contact Info Section */
@@ -2230,11 +2253,23 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
+    min-width: 0;
 }
 
 .contact-intro {
     padding: 2.5rem;
     border-radius: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    min-width: 0;
 }
 
 .availability-badge {
@@ -2308,11 +2343,6 @@ body {
 }
 
 /* Contact Methods */
-.contact-methods {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
 
 .contact-method-card {
     padding: 1.5rem;
@@ -2324,6 +2354,9 @@ body {
     text-decoration: none;
     position: relative;
     overflow: hidden;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .contact-method-card::before {
@@ -2377,6 +2410,8 @@ body {
 
 .method-info {
     flex: 1;
+    min-width: 0;
+    overflow: hidden;
 }
 
 .method-info h4 {
@@ -2388,6 +2423,8 @@ body {
 .method-info p {
     font-size: 0.95rem;
     color: var(--text-muted);
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .method-arrow {
@@ -2421,10 +2458,17 @@ body {
 }
 
 /* Contact Form Section */
+.contact-form-section {
+    width: 100%;
+    min-width: 0;
+}
+
 .contact-form-container {
     padding: 2.5rem;
     border-radius: 24px;
     position: relative;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-header {
@@ -2833,11 +2877,33 @@ body {
     .cta-actions .btn {
         width: 100%;
     }
+
+    .contact-wrapper {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contact-method-card {
+        padding: 1.2rem;
+        flex-wrap: wrap;
+    }
+
+    .method-arrow {
+        flex-shrink: 0;
+    }
 }
 
 @media (max-width: 480px) {
+    .contact-intro {
+        padding: 1rem;
+    }
+
     .contact-intro h3 {
         font-size: 1.5rem;
+    }
+
+    .contact-intro p {
+        font-size: 0.9rem;
     }
 
     .form-header h3 {
@@ -2857,6 +2923,40 @@ body {
         width: 50px;
         height: 50px;
         font-size: 1.2rem;
+    }
+
+    .contact-method-card {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .method-info h4 {
+        font-size: 1rem;
+    }
+
+    .method-info p {
+        font-size: 0.85rem;
+    }
+
+    .method-badge {
+        font-size: 0.75rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .bento-item {
+        padding: 1rem;
+    }
+
+    .profile-description p {
+        font-size: 0.9rem;
+    }
+
+    .timeline-content h4 {
+        font-size: 1rem;
+    }
+
+    .education-content h4 {
+        font-size: 1rem;
     }
 }
 
