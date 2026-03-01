@@ -51,6 +51,8 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -59,12 +61,15 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    width: 100%;
+    min-width: 0;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: var(--container-padding);
+    width: 100%;
 }
 
 /* ===========================
@@ -1086,7 +1091,7 @@ body {
 
 .skills-showcase {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
     gap: 2rem;
     margin-bottom: 5rem;
 }
@@ -1266,7 +1271,7 @@ body {
 
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
     gap: 1.5rem;
     position: relative;
     z-index: 1;
@@ -1675,7 +1680,7 @@ body {
 }
 
 .portfolio-grid.grid-view {
-    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr));
 }
 
 .portfolio-grid.list-view {
@@ -2105,7 +2110,7 @@ body {
    =========================== */
 @media (max-width: 1200px) {
     .portfolio-grid.grid-view {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
     }
 }
 
@@ -2603,7 +2608,7 @@ body {
 
 .social-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
     gap: 1.5rem;
 }
 
@@ -3043,6 +3048,10 @@ body {
 }
 
 @media (max-width: 640px) {
+    :root {
+        --container-padding: 0 16px;
+    }
+
     .section-title {
         font-size: 2rem;
     }
@@ -3070,6 +3079,25 @@ body {
     .social-btn {
         width: 100%;
         justify-content: center;
+    }
+
+    /* Prevent grid/flex overflow on mobile */
+    .bento-item,
+    .skill-card-modern,
+    .tool-card,
+    .project-card,
+    .social-card {
+        min-width: 0;
+    }
+
+    img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 380px) {
+    :root {
+        --container-padding: 0 12px;
     }
 }
 
